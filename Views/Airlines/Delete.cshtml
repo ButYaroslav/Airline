@@ -1,0 +1,32 @@
+﻿@model Airline.Models.Airlines
+
+@{
+    ViewData["Title"] = "Delete Airlines";
+}
+
+<form asp-action="DeleteAirline" method="post">
+    <h1 class="text-info pl-3">Видалення даних авіакомпанії</h1>
+    <input asp-for="Id" hidden>
+    <br>
+    <div class="col-4">
+        <label asp-for="Name"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <input asp-for="Name" class="form-control" disabled>
+    </div>
+    <br>
+    <div class="col-4">
+        <label asp-for="DisplayOrder"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        <input asp-for="DisplayOrder" class="form-control" disabled>
+    </div>
+    <br>
+    <div class="col-8">
+        <input type="submit" class="btn btn-success w-50" value="Видалити">
+        <br><br>
+        <a asp-action="Index" class="btn btn-success w-50">Назад</a>
+    </div>
+</form>

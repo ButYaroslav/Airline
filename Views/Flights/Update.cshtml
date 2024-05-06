@@ -1,0 +1,98 @@
+﻿@model Airline.Models.Flights
+
+@{
+    ViewData["Title"] = "Update Flights";
+}
+
+<form asp-action="Update" method="post">
+    <h1 class="text-info pl-3">Оновлення рейсу</h1>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="Namber"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="Namber" class="text-danger"></span>
+        <input asp-for="Namber" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="DepartureAirport"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="DepartureAirport" class="text-danger"></span>
+        <input asp-for="DepartureAirport" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="ArrivalAirport"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="ArrivalAirport" class="text-danger"></span>
+        <input asp-for="ArrivalAirport" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="DepartureDate"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="DepartureDate" class="text-danger"></span>
+        <input asp-for="DepartureDate" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="ArrivalDate"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="ArrivalDate" class="text-danger"></span>
+        <input asp-for="ArrivalDate" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="DepartureTime"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="DepartureTime" class="text-danger"></span>
+        <input asp-for="DepartureTime" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="ArrivalTime"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+        <input asp-for="ArrivalTime" class="form-control">
+    </div>
+    <br>
+
+    <div class="col-4">
+        <label asp-for="AirlinesId"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="AirlinesId" class="text-danger"></span>
+        <select asp-for="AirlinesId" asp-items="@ViewBag.AirlinesDropDown" class="form-control">
+            <option disabled selected>--Оберіть авіакомпанію--</option>
+        </select>
+    </div>
+
+    <br>
+
+    <div class="col-8">
+        <input type="submit" class="btn btn-success w-50" value="Оновити">
+        <br><br>
+        <a asp-action="Index" class="btn btn-success w-50">Назад</a>
+    </div>
+</form>

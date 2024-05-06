@@ -1,0 +1,31 @@
+﻿@model Airline.Models.Airlines
+
+@{
+    ViewData["Title"] = "Update Airlines";
+}
+
+<form asp-action="Update" method="post">
+    <h1 class="text-info pl-3">Оновлення даних про авіакомпанії</h1>
+    <br>
+    <div class="col-4">
+        <label asp-for="Name"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <br>
+    <div class="col-4">
+        <label asp-for="DisplayOrder"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        <input asp-for="DisplayOrder" class="form-control">
+    </div>
+    <br>
+    <div class="col-8">
+        <input type="submit" class="btn btn-success w-100" value="Оновити дані">
+        <br><br>
+        <a asp-action="Index" class="btn btn-success w-100">Назад</a>
+    </div>
+</form>
