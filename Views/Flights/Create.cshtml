@@ -5,8 +5,9 @@
 }
 
 <form asp-action="Create" method="post">
-    <h1 class="text-info pl-3">Додання рейсу</h1>
+    <h1 class="text-black pl-3">Додавання рейсу</h1>
 
+    
     <br>
 
     <div class="col-4">
@@ -60,6 +61,26 @@
     <br>
 
     <div class="col-4">
+        <label asp-for="DepartureTime"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="DepartureTime" class="text-danger"></span>
+        <input asp-for="DepartureTime" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
+        <label asp-for="ArrivalTime"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+        <input asp-for="ArrivalTime" class="form-control">
+    </div>
+
+    <br>
+
+    <div class="col-4">
         <label asp-for="AirlinesId"></label>
     </div>
     <div class="col-8">
@@ -71,9 +92,8 @@
 
     <br>
 
-    <div class="col-8">
-        <input type="submit" class="btn btn-success w-100" value="Додати">
-        <br><br>
-        <a asp-action="Index" class="btn btn-success w-100">Назад</a>
+    <div class="d-grid gap-2 col-4 mx-1">
+		<input type="submit" class="btn btn-success w-55" value="СТВОРИТИ РЕЙС"> 
+        <a asp-action="Index" class="btn btn-danger w-55"> НАЗАД</a> 
     </div>
 </form>

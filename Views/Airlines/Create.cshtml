@@ -5,7 +5,7 @@
 }
 
 <form asp-action="Create" method="post">
-    <h1 class="text-info pl-3">Додання даних авіакомпанії</h1>
+<h1 class="text-black pl-3">Додавання даних авіакомпанії</h1>
     <br>
     <div class="col-4">
         <label asp-for="Name"></label>
@@ -16,6 +16,14 @@
     </div>
     <br>
     <div class="col-4">
+        <label asp-for="NameCountry"></label>
+    </div>
+    <div class="col-8">
+        <span asp-validation-for="NameCountry" class="text-danger"></span>
+        <input asp-for="NameCountry" class="form-control">
+	</div>
+    <br>
+    <div class="col-4">
         <label asp-for="DisplayOrder"></label>
     </div>
     <div class="col-8">
@@ -23,9 +31,8 @@
         <input asp-for="DisplayOrder" class="form-control">
     </div>
     <br>
-    <div class="col-8">
-        <input type="submit" class="btn btn-success w-100" value="Додати">
-        <br><br>
-        <a asp-action="Index" class="btn btn-success w-100">Назад</a>
+   <div class="d-grid gap-2 col-4 mx-1">
+		<input type="submit" class="btn btn-success w-55" value="ДОДАТИ">
+		<a asp-action="Index" class="btn btn-danger w-55">НАЗАД</a>
     </div>
 </form>

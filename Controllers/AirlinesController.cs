@@ -85,7 +85,7 @@ namespace Airline.Controllers
 		}
 
 		// POST DELETE
-		public IActionResult DeletePost(int? id)
+		public IActionResult DeleteAirline(int? id)
 		{
 			var obj = _db?.Airlines.Find(id);
 			if (obj == null)

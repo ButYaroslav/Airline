@@ -4,9 +4,10 @@
     ViewData["Title"] = "Delete Flights";
 }
 
-<form asp-action="DeletePost" method="post">
-    <h1 class="text-info pl-3">Скасування рейсу</h1>
+<form asp-action="DeleteFlight" method="post">
+    <h1 class="text-black pl-3">Скасування рейсу</h1>
     <input asp-for="Id" hidden>
+
     <br>
 
     <div class="col-4">
@@ -69,9 +70,8 @@
 
     <br>
 
-    <div class="col-8">
-        <input type="submit" class="btn btn-success w-100" value="Скасувати">
-        <br><br>
-        <a asp-action="Index" class="btn btn-success w-100">Назад</a>
+    <div class="d-grid gap-2 col-4 mx-1">
+        <input type="submit" class="btn btn-success w-55" value="СКАСУВАТИ РЕЙС"> 
+        <a asp-action="Index" class="btn btn-danger w-55">НАЗАД</a>
     </div>
 </form>

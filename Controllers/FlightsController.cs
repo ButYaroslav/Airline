@@ -41,20 +41,21 @@ namespace Airline.Controllers
 		// POST CREATE
 		[HttpPost]
 		[ValidateAntiForgeryToken]
+	
 		public IActionResult Create(Flights obj)
-		{
-			if (ModelState.IsValid)
-			{
-				_db?.Flights.Add(obj);
-				_db?.SaveChanges();
-				return RedirectToAction("Index");
-			}
-			return View(obj);
-		}
+        {
+            if (ModelState.IsValid)
+            {
+                _db?.Flights.Add(obj);
+                _db?.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
 
 
-		// GET UPDATE
-		public IActionResult Update(int? id)
+        // GET UPDATE
+        public IActionResult Update(int? id)
 		{
 			IEnumerable<SelectListItem> AirlinesDropDown = _db.Airlines.Select(i => new SelectListItem
 			{

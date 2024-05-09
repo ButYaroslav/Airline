@@ -5,10 +5,16 @@
 }
 
 <div class="row pt-4">
-    <h2 class="text-primary">Доступні рейси</h2>
-    <div class="col-6 text-end">
-		<a asp-action="Create" asp-controller="Flights" class="btn btn-primary"><i class="fa-regular fa-plus"></i> Додання нового рейсу</a>
+    <div class="text-center">
+		<h2 class="text-black">Доступні рейси</h2>
+	</div>
+
+    <br><br>
+
+    <div class="col-6 text">
+        <span class="badge rounded-pill bg-warning"> <a asp-action="Create" asp-controller="Flights" class="btn btn-warning"> ДОДАТИ НОВИЙ РЕЙС</a> </span>
     </div>
+  
 </div>
 <br>
 <br>
@@ -16,15 +22,15 @@
 {
     <table class="table table-bordered table-striped">
         <tr>
-            <th>НАЗВА РЕЙСУ</th>
-            <th>АЕРОПОРТ ВИЛЬОТУ</th>
-            <th>АЕРОПОРТ ПРИЛЬОТУ</th>
-			<th>ДАТА ВИЛЬОТУ</th>
-            <th>ДАТА ПРИЛЬОТУ</th>
-            <th>ЧАС ВИЛЬОТУ</th>
-            <th>ЧАС ПРИЛЬОТУ</th>
-            <th>АВІАКОМПАНІЯ, ЯКА НАДАЄ ПОСЛУГИ</th>
-            <th>ДІЇ</th>
+            <th>Номер рейсу</th>
+            <th>Аеропорт вильоту</th>
+            <th>Аеропорт прильоту</th>
+			<th>Дата вильоту</th>
+            <th>Дата прильоту</th>
+            <th>Час вильоту</th>
+            <th>Час прильоту</th>
+            <th>Авіакомпанія, яка надає послуги</th>
+            <th>Дії</th>
         </tr>
         @foreach (var obj in Model)
         {
@@ -38,8 +44,8 @@
                 <td>@obj.ArrivalTime</td>
                 <td>@obj?.Airlines?.Name</td>
                 <td>
-					<a asp-controller="Flights" asp-action="Update" asp-route-Id="@obj.Id" class="btn btn-primary m-1"><i class="fa-regular fa-pen-to-square"></i>Оновити</a>
-                    <a asp-controller="Flights" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-danger m-1"><i class="fa-solid fa-trash"></i> Видалити</a>
+                    <span class="badge rounded-pill bg-primary"> <a asp-controller="Flights" asp-action="Update" asp-route-Id="@obj.Id" class="btn btn-primary m-1"> Оновити</a></span>
+                    <span class="badge rounded-pill bg-danger"><a asp-controller="Flights" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-danger m-1"> Скасувати</a> </span>
                 </td>
             </tr>
         }
@@ -47,5 +53,5 @@
 }
 else
 {
-    <p><b>Доступних рейсів немає!</b></p>
+    <p><b>ДОСТУПНИХ РЕЙСІВ НЕМАЄ!</b></p>
 }
